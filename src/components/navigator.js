@@ -15,6 +15,9 @@ const MenuVoice = styled.li`
 const MenuLink = styled.a`
   color: whitesmoke;
   text-decoration: none;
+  :hover {
+    border-bottom: 0.1rem solid whitesmoke;
+  }
 `;
 
 export default () => (
