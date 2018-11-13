@@ -13,6 +13,7 @@ const HeaderContainer = styled.div`
   height: 3rem;
   box-shadow: 0 0px 4px 2px #999;
   color: whitesmoke;
+  z-index: 100;
 `;
 
 const Sign = styled.h1`

@@ -1,9 +1,18 @@
 import React from "react";
 import Header from "./header";
+import Footer from "./footer";
+import styled from "styled-components";
+
+const FlexColumnDiv = styled.div`
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+`;
 
 export default ({ children }) => (
-  <div>
+  <FlexColumnDiv>
     <Header />
     {children}
-  </div>
+    <Footer />
+  </FlexColumnDiv>
 );

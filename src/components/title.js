@@ -11,7 +11,6 @@ const MyName = styled.h1`
   font-weight: normal;
   color: #e0dfdc;
   letter-spacing: 0.1rem;
-  animation: zoomIn 2s, fadeIn 2s;
   text-shadow: 0 -1px 0 #fff, 0 1px 0 #848282, 0 3px 0 #838383, 0 5px 0 #838181,
     0 7px 0 #3d3c3c, 0 9px 0 #303030, 0 11px 0 #242424;
 `;
