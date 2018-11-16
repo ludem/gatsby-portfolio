@@ -1,6 +1,7 @@
 import React from "react";
 import Navigator from "./navigator";
 import styled from "styled-components";
+import { StaticQuery, graphql } from "gatsby";
 import { BACKGROUND_COLOR } from "../utils/css-constants";
 
 const HeaderContainer = styled.div`
@@ -21,9 +22,32 @@ const Sign = styled.h1`
   font-family: "Nothing You Could Do";
 `;
 
+export const query = graphql`
+  query {
+    site {
+      siteMetadata {
+        title
+      }
+    }
+  }
+`;
+
 export default () => (
-  <HeaderContainer>
-    <Sign>ludem</Sign>
-    <Navigator />
-  </HeaderContainer>
+  <StaticQuery
+    query={graphql`
+      query {
+        site {
+          siteMetadata {
+            title
+          }
+        }
+      }
+    `}
+    render={data => (
+      <HeaderContainer>
+        <Sign>{data.site.siteMetadata.title}</Sign>
+        <Navigator />
+      </HeaderContainer>
+    )}
+  />
 );
