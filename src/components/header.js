@@ -22,16 +22,6 @@ const Sign = styled.h1`
   font-family: "Nothing You Could Do";
 `;
 
-export const query = graphql`
-  query {
-    site {
-      siteMetadata {
-        title
-      }
-    }
-  }
-`;
-
 export default () => (
   <StaticQuery
     query={graphql`
