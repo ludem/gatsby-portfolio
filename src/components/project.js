@@ -76,7 +76,7 @@ const ThumbnailContainer = styled.div`
 `;
 
 export default ({ project }) => {
-  const { title, subtitle, technologies } = project;
+  const { title, description, tags } = project;
   return (
     <ThumbnailContainer>
       <Thumbnail>
@@ -84,8 +84,8 @@ export default ({ project }) => {
         <ViewProject />
       </Thumbnail>
       <ProjectTitle>{title}</ProjectTitle>
-      <ProjectSubtitle>{subtitle}</ProjectSubtitle>
-      <ProjectTechnologies>{technologies}</ProjectTechnologies>
+      <ProjectSubtitle>{description}</ProjectSubtitle>
+      <ProjectTechnologies>{tags}</ProjectTechnologies>
     </ThumbnailContainer>
   );
 };

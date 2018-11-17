@@ -1,21 +1,8 @@
 import React from "react";
 import styled from "styled-components";
 import Project from "./project";
-
-const projects = [
-  {
-    key: 0,
-    title: "Prova",
-    subtitle: "Provaprova",
-    technologies: "jsjsjsjs"
-  },
-  {
-    key: 1,
-    title: "Progetto 2",
-    subtitle: "Progetto",
-    technologies: "HTML"
-  }
-];
+import { StaticQuery, graphql } from "gatsby";
+import title from "./title";
 
 const Portfolio = styled.div`
   margin-top: 2rem;
@@ -27,9 +14,30 @@ const Portfolio = styled.div`
 `;
 
 export default () => (
-  <Portfolio>
-    {projects.map(project => (
-      <Project key={project.key} project={project} />
-    ))}
-  </Portfolio>
+  <StaticQuery
+    query={graphql`
+      {
+        allMarkdownRemark {
+          edges {
+            node {
+              frontmatter {
+                title
+                description
+                tags
+              }
+            }
+          }
+        }
+      }
+    `}
+    render={data => (
+      <Portfolio>
+        {data.allMarkdownRemark.edges.map(
+          ({ node: { frontmatter } }, index) => (
+            <Project key={index} project={frontmatter} />
+          )
+        )}
+      </Portfolio>
+    )}
+  />
 );
