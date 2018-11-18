@@ -39,12 +39,11 @@ const ViewProject = styled.div`
   z-index: 2;
 `;
 
-const ThumbnailImg = styled.div`
+const ThumbnailImg = styled.img`
   width: 20rem;
   height: 10rem;
   display: block;
   transition: filter 0.4s ease-out, opacity 0.4s ease-out;
-  border: 1px solid red;
 `;
 
 const Thumbnail = styled.div`
@@ -76,11 +75,11 @@ const ThumbnailContainer = styled.div`
 `;
 
 export default ({ project }) => {
-  const { title, description, tags } = project;
+  const { title, description, tags, thumbnail } = project;
   return (
     <ThumbnailContainer>
       <Thumbnail>
-        <ThumbnailImg />
+        <ThumbnailImg src={thumbnail} alt="" />
         <ViewProject />
       </Thumbnail>
       <ProjectTitle>{title}</ProjectTitle>
