@@ -6,8 +6,8 @@ media_folder: static/img
 public_folder: /img
 
 collections:
-  - name: "projects"
-    label: "Projects"
+  - name: "project"
+    label: "Project"
     folder: "src/pages/projects"
     create: true
     slug: "{{slug}}"
@@ -15,3 +15,5 @@ collections:
       - { label: "Title", name: "title", widget: "string" }
       - { label: "Description", name: "description", widget: "text" }
       - { label: "Tags", name: "tags", widget: "text" }
+      - { label: "Thumbnail", name: "thumbnail", widget: "image" }
+      - { label: "Link", name: "link", widget: "text" }

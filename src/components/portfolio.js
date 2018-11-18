@@ -33,8 +33,15 @@ export default () => (
     render={data => (
       <Portfolio>
         {data.allMarkdownRemark.edges.map(
-          ({ node: { frontmatter } }, index) => (
-            <Project key={index} project={frontmatter} />
+          (
+            {
+              node: {
+                frontmatter: { title, description, tags }
+              }
+            },
+            index
+          ) => (
+            <Project key={index} project={{ title, description, tags }} />
           )
         )}
       </Portfolio>
