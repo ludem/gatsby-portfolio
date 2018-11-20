@@ -16,4 +16,5 @@ collections:
       - { label: "Description", name: "description", widget: "text" }
       - { label: "Tags", name: "tags", widget: "text" }
       - { label: "Thumbnail", name: "thumbnail", widget: "image" }
-      - { label: "Link", name: "link", widget: "text" }
+      - { label: "Link", name: "link", widget: "string" }
+      - { label: "Slug", name: "slug", widget: "string" }

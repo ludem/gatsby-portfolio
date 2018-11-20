@@ -1,15 +1,14 @@
 import React from "react";
 import styled from "styled-components";
+import { CenteredDiv } from "./basics";
 
-const Bio = styled.div`
+const Bio = styled(CenteredDiv)`
+  justify-content: flex-start;
   margin-top: 12rem;
   padding-bottom: 1rem;
   padding-top: 8rem;
   position: relative;
   height: auto;
-  display: flex;
-  justify-content: flex-start;
-  align-items: center;
   flex-direction: column;
   background: silver;
 `;
@@ -37,26 +36,23 @@ const About = styled.div`
   padding: 0;
 `;
 
-const Info = styled.div`
-  display: flex;
+const Info = styled(CenteredDiv)`
+  align-content: flex-start;
   width: 100%;
   padding: 0.5rem;
-  justify-content: center;
-  align-content: flex-start;
-  text-align: center;
   * {
     flex: 1;
   }
 `;
 
-const Contacts = styled.i`
+/*const Contacts = styled.i`
   transition: transform 0.3s ease-in-out;
   margin: 1rem;
   color: #242424;
   :hover {
     transform: scale(1.3);
   }
-`;
+`;*/
 
 export default () => (
   <Bio>
