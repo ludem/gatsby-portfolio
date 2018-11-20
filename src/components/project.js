@@ -1,5 +1,6 @@
 import React from "react";
 import styled from "styled-components";
+import { CenteredDiv } from "./basics";
 
 const ProjectTitle = styled.p`
   margin: 0.5rem 0 0 0;
@@ -17,6 +18,7 @@ const ProjectSubtitle = styled.p`
   font-size: 0.8rem;
   margin: 0;
 `;
+
 const ProjectTechnologies = styled.p`
   margin: 0;
   font-size: 0.8rem;
@@ -24,43 +26,42 @@ const ProjectTechnologies = styled.p`
   max-width: 100%;
 `;
 
-const ViewProject = styled.div`
-  position: absolute;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  margin: 0;
-  padding: 1rem;
-  top: 0;
-  opacity: 0;
-  height: 100%;
+const Thumbnail = styled(CenteredDiv)`
+  position: relative;
   width: 100%;
+  height: 10rem;
+  overflow: hidden;
+  :hover img {
+    filter: grayscale(100%);
+    opacity: 0.4;
+  }
+  :hover div {
+    opacity: 1;
+  }
+`;
+
+const ViewProject = styled(CenteredDiv)`
+  padding: 1rem;
+  font-size: 1.5rem;
+  border: 0.5rem solid black;
+
+  opacity: 0;
   transition: opacity 0.4s ease-out;
+
+  font-family: "Abel", sans-serif;
+  color: black;
+  text-transform: uppercase;
   z-index: 2;
 `;
 
 const ThumbnailImg = styled.img`
+  position: absolute;
+  top: 0;
   width: 20rem;
   height: 10rem;
   display: block;
   transition: filter 0.4s ease-out, opacity 0.4s ease-out;
 `;
-
-const Thumbnail = styled.div`
-  position: relative;
-  width: 100%;
-  height: 10rem;
-  overflow: hidden;
-  :hover {
-    filter: grayscale(100%);
-    opacity: 0.4;
-  }
-`;
-
-/* .thumbnail:hover .thumbnailImg {
-  filter: grayscale(100%);
-  opacity: 0.4;
-} */
 
 const ThumbnailContainer = styled.div`
   position: relative;
@@ -79,8 +80,8 @@ export default ({ project }) => {
   return (
     <ThumbnailContainer>
       <Thumbnail>
+        <ViewProject>View Project</ViewProject>
         <ThumbnailImg src={thumbnail} alt="" />
-        <ViewProject />
       </Thumbnail>
       <ProjectTitle>{title}</ProjectTitle>
       <ProjectSubtitle>{description}</ProjectSubtitle>

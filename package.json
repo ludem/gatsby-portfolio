@@ -9,18 +9,21 @@
   },
   "dependencies": {
     "babel-plugin-styled-components": "^1.8.0",
-    "gatsby": "^2.0.0",
+    "gatsby": "^2.0.50",
     "gatsby-cli": "^2.4.5",
+    "gatsby-image": "^2.0.20",
     "gatsby-plugin-netlify-cms": "^3.0.7",
-    "gatsby-plugin-styled-components": "^3.0.0",
-    "gatsby-plugin-typography": "^2.2.0",
+    "gatsby-plugin-sharp": "^2.0.12",
+    "gatsby-plugin-styled-components": "^3.0.2",
+    "gatsby-plugin-typography": "^2.2.1",
     "gatsby-source-filesystem": "^2.0.8",
     "gatsby-transformer-remark": "^2.1.12",
+    "gatsby-transformer-sharp": "^2.1.8",
     "netlify-cms": "^2.2.0",
-    "react": "^16.5.1",
-    "react-dom": "^16.5.1",
+    "react": "^16.6.3",
+    "react-dom": "^16.6.3",
     "react-typography": "^0.16.13",
-    "styled-components": "^4.0.2",
+    "styled-components": "^4.1.1",
     "typography": "^0.16.17"
   }
 }
