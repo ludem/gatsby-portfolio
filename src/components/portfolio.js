@@ -9,7 +9,6 @@ const Portfolio = styled.div`
   flex-wrap: wrap;
   justify-content: space-around;
   align-items: flex-start;
-  flex-grow: 1;
 `;
 
 export default () => (
