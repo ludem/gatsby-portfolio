@@ -23,6 +23,7 @@ export default () => (
                 description
                 tags
                 thumbnail
+                slug
               }
             }
           }

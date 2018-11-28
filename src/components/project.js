@@ -1,6 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 import { CenteredDiv } from "./basics";
+import { Link } from "gatsby";
 
 const ProjectTitle = styled.p`
   margin: 0.5rem 0 0 0;
@@ -52,6 +53,12 @@ const ViewProject = styled(CenteredDiv)`
   color: black;
   text-transform: uppercase;
   z-index: 2;
+
+  text-decoration: none;
+  :visited,
+  :hover {
+    text-decoration: none;
+  }
 `;
 
 const ThumbnailImg = styled.img`
@@ -73,16 +80,23 @@ const ThumbnailContainer = styled.div`
   flex-grow: 1;
   margin: 1rem 0.5rem 2rem 0.5rem;
   font-size: 1.5rem;
+  text-decoration: none;
+`;
+
+const NoUnderlinedLink = styled(Link)`
+  text-decoration: none;
 `;
 
 export default ({ project }) => {
-  const { title, description, tags, thumbnail } = project;
+  const { title, description, tags, thumbnail, slug } = project;
   return (
     <ThumbnailContainer>
-      <Thumbnail>
-        <ViewProject>View Project</ViewProject>
-        <ThumbnailImg src={thumbnail} alt="" />
-      </Thumbnail>
+      <NoUnderlinedLink to={`/${slug}/`}>
+        <Thumbnail>
+          <ViewProject>View Project</ViewProject>
+          <ThumbnailImg src={thumbnail} alt="" />
+        </Thumbnail>
+      </NoUnderlinedLink>
       <ProjectTitle>{title}</ProjectTitle>
       <ProjectSubtitle>{description}</ProjectSubtitle>
       <ProjectTechnologies>{tags}</ProjectTechnologies>

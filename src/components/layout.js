@@ -5,8 +5,9 @@ import styled from "styled-components";
 import { createGlobalStyle } from "styled-components";
 
 const GlobalStyle = createGlobalStyle`
-  body, html {
+  html, body, #___gatsby, #___gatsby > div {
     height: 100%;
+    overflow: auto;
   }
 `;
 

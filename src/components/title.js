@@ -28,6 +28,6 @@ const TitleContainer = styled.div`
 
 export default () => (
   <TitleContainer>
-    <MyName>Luca D'Emilio</MyName>
+    <MyName>---</MyName>
   </TitleContainer>
 );
