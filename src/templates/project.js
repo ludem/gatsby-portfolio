@@ -11,6 +11,11 @@ const Content = styled(CenteredDiv)`
   border: 1px solid red;
 `;
 
+const StyledIframe = styled.iframe`
+  border: none;
+  object-fit: fill;
+`;
+
 export const query = graphql`
   query($slug: String!) {
     markdownRemark(frontmatter: { slug: { eq: $slug } }) {
@@ -38,6 +43,8 @@ export default ({ data }) => {
       <Content>
         <h1>{title}</h1>
         <h2>{description}</h2>
+        <StyledIframe title={title} width="300" height="200" src={link} />
+        <a href={link}>Go to the project</a>
       </Content>
     </Layout>
   );
